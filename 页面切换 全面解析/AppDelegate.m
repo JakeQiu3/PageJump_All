@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+
 #import "TabBarViewController.h"
-#import "MainViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,20 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-////    1. 测试TabBarViewController
-//    TabBarViewController *mainVC = [[TabBarViewController alloc] init];
-////    2. 测试导航控制器
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
-//    
-//    [[UINavigationBar appearance]setBarTintColor:[UIColor colorWithRed:23/255.0 green:180/255.0 blue:237/255.0 alpha:1]];//整个Bar的颜色
-//    [[UITabBar appearance]setTintColor:[UIColor redColor]];//无bar文字颜色
-//    3.测试3 ：模态跳转
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    self.window.rootViewController = mainVC;
+//    此时只有1个gestureRecognizers 的window："<UIWindow: 0x7fd269e1b840; frame = (0 0; 414 736); hidden = YES; gestureRecognizers = <NSArray: 0x7fd269e1a5d0>; layer = <UIWindowLayer: 0x7fd269e18c60>>",
+//    NSLog(@"%@,====%@",[UIApplication sharedApplication].windows,[UIApplication sharedApplication].keyWindow);
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:23/255.0 green:180/255.0 blue:237/255.0 alpha:1]];
+    [[UINavigationBar appearance]setBarStyle:UIBarStyleBlack];
+    [[UITabBar appearance]setBarTintColor:[UIColor colorWithRed:23/255.0 green:180/255.0 blue:237/255.0 alpha:1]];
+    ViewController *mainVC = [[ViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
-    // Override point for customization after application launch.
+  
     return YES;
 }
 

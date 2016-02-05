@@ -6,22 +6,24 @@
 //  Copyright © 2015年 QSY. All rights reserved.
 //
 
-#import "WebChatViewController.h"
+#import "FirstViewController.h"
 
-@interface WebChatViewController ()
+@interface FirstViewController ()
 
 @end
 
-@implementation WebChatViewController
+@implementation FirstViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 //    设置导航条的项目：文字，左右视图和返回视图
-    self.navigationItem.title = @"friends";
+    self.navigationItem.title = @"我是1个控制器";
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = nil;
     self.navigationItem.backBarButtonItem = nil;
-    // Do any additional setup after loading the view.
+   
+   
 }
 
 - (void)didReceiveMemoryWarning {

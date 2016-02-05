@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebChatViewController : UIViewController
+@interface FirstViewController : UIViewController
 
 @end

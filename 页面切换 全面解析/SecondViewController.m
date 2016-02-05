@@ -6,18 +6,22 @@
 //  Copyright © 2015年 QSY. All rights reserved.
 //
 
-#import "ContactViewController.h"
+#import "SecondViewController.h"
 
-@interface ContactViewController ()
+@interface SecondViewController ()
 
 @end
 
-@implementation ContactViewController
+@implementation SecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    //    设置导航条的项目：文字，左右视图和返回视图
+    self.navigationItem.title = @"我是2个控制器";
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.backBarButtonItem = nil;
 }
 
 - (void)didReceiveMemoryWarning {

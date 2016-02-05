@@ -1,0 +1,11 @@
+1.tabbarvc：容器控制器：最大的容器
+// tabBarItem的image属性:必须是png格式（建议大小32*32）并且打开alpha通道否则无法正常显示
+
+//注意默认情况下UITabBarController在加载子视图时是懒加载的，所以这里调用1次contactController，否则在第一次展示时只有第一个控制器tab图标，contactController的tab图标不会显示.
+<!--//  self.viewControllers: UITabBarController首先会清空所有旧的viewController，然后逐个（根据选择的tabbar）创建新的viewController。（无论是否设置选择的tabbar，默认创建第0个tabbar（即：创建第0个控制器））。 -->
+<!---->tabbar采用的是兄弟共存的方式，一旦创建后，多个控制器同时存在。可以由一个控制器创建的不同对象组成，但不能由一个控制器的同一个对象多次入栈。
+
+2.navigationvc：次级容器控制器
+本身可以让多个viewcontroller进栈出栈，但其本身必须要拥有1个根控制器，作为栈底的引子。其本身常作为window的rootviewcontroller。
+<!----陷阱：tabbar容器类一般会镶嵌很多navigationvc，导航控制器再设置各自的rootviewController> ！！！！！！！！！若在navigationvc 里设置tabbar，tabbar里在设置3个子navigationvc，会出现navigationitem的设置问题。
+ 

@@ -7,53 +7,74 @@
 //
 
 #import "TabBarViewController.h"
-#import "WebChatViewController.h"
-#import "ContactViewController.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+#import "ThirdViewController.h"
 @interface TabBarViewController ()
 
 @end
 
 @implementation TabBarViewController
-// tabBarItem的image属性必须是png格式（建议大小32*32）并且打开alpha通道否则无法正常显示
 
- //注意默认情况下UITabBarController在加载子视图时是懒加载的，所以这里调用1次contactController，否则在第一次展示时只有第一个控制器tab图标，contactController的tab图标不会显示.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    WebChatViewController *webVc = [[WebChatViewController alloc] init];
-    webVc.view.backgroundColor = [UIColor whiteColor];
-    webVc.tabBarItem.title = @"web Chat";
-    webVc.tabBarItem.image = [UIImage imageNamed:@"1-1@2x"];
-    webVc.tabBarItem.selectedImage = [UIImage imageNamed:@"1-1"];
-    webVc.tabBarItem.badgeValue = @"5";
+    FirstViewController *firstVc = [[FirstViewController alloc] init];
+//    self.view执行创建视图viewDidLoad
+//    firstVc.view.backgroundColor = [UIColor whiteColor];
+    firstVc.tabBarItem.title = @"第一个";
+    firstVc.tabBarItem.image = [UIImage imageNamed:@"1-1@2x"];
+    firstVc.tabBarItem.selectedImage = [UIImage imageNamed:@"1-1"];
+    firstVc.tabBarItem.badgeValue = @"";
+    UINavigationController *firstNav = [[UINavigationController alloc] initWithRootViewController:firstVc];
     
     
-    ContactViewController *contactVc = [[ContactViewController alloc] init];
-    contactVc.view.backgroundColor = [UIColor grayColor];
-    contactVc.tabBarItem.title = @"Contact";
-    contactVc.tabBarItem.image = [UIImage imageNamed:@"1-1@2x"];
-    contactVc.tabBarItem.selectedImage = [UIImage imageNamed:@"1-1"];
-    contactVc.tabBarItem.badgeValue = @"14";
+    SecondViewController *secondVc = [[SecondViewController alloc] init];
+//    secondVc.view.backgroundColor = [UIColor grayColor];
+    secondVc.tabBarItem.title = @"第二个";
+    secondVc.tabBarItem.image = [UIImage imageNamed:@"1-1@2x"];
+    secondVc.tabBarItem.selectedImage = [UIImage imageNamed:@"1-1"];
+    secondVc.tabBarItem.badgeValue = @"12";
+    UINavigationController *secondNav = [[UINavigationController alloc] initWithRootViewController:secondVc];
+    
+    ThirdViewController *thirdVc = [[ThirdViewController alloc] init];
+//    thirdVc.view.backgroundColor = [UIColor lightGrayColor];
+    thirdVc.tabBarItem.title = @"第三个";
+    thirdVc.tabBarItem.image = [UIImage imageNamed:@"1-1"];
+    thirdVc.tabBarItem.selectedImage = [UIImage imageNamed:@"1-1@2x"];
+    thirdVc.tabBarItem.badgeValue = @"13";
+    UINavigationController *thirdNav = [[UINavigationController alloc] initWithRootViewController:thirdVc];
     
     
-    self.viewControllers = @[webVc,contactVc];
+    ThirdViewController *fourthVc = [[ThirdViewController alloc] init];
+    fourthVc.tabBarItem.title = @"第四个";
+    fourthVc.tabBarItem.image = [UIImage imageNamed:@"1-1"];
+    fourthVc.tabBarItem.selectedImage = [UIImage imageNamed:@"1-1@2x"];
+    fourthVc.tabBarItem.badgeValue = @"13@2x";
+    UINavigationController *fourthNav = [[UINavigationController alloc] initWithRootViewController:fourthVc];
+    
+    
+    ThirdViewController *fif = [[ThirdViewController alloc] init];
+    fif.tabBarItem.title = @"第五个";
+    fif.tabBarItem.image = [UIImage imageNamed:@"1-1"];
+    fif.tabBarItem.selectedImage = [UIImage imageNamed:@"1-1@2x"];
+    fif.tabBarItem.badgeValue = @"13@3x";
+    UINavigationController *fifNav = [[UINavigationController alloc] initWithRootViewController:fif];
+// self.viewControllers: UITabBarController首先会清空所有旧的viewController，然后逐个（根据选择的tabbar）创建新的viewController。（无论是否设置选择的tabbar，默认创建第0个tabbar（即：创建第0个控制器））。
+
+    self.viewControllers = @[firstNav,secondNav,thirdNav,fourthNav,fifNav];
+//    或者采用下面方法：创建对应的子控制器
+//    [self addChildViewController:firstVc];
+//    [self addChildViewController:secondVc];
+//    [self addChildViewController:thirdVc];
+    
+    
+    
     self.selectedIndex = 1;
+//   或者2
+//    self.selectedViewController = firstVc;
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
