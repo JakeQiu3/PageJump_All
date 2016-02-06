@@ -22,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
 //    此时只有1个gestureRecognizers 的window："<UIWindow: 0x7fd269e1b840; frame = (0 0; 414 736); hidden = YES; gestureRecognizers = <NSArray: 0x7fd269e1a5d0>; layer = <UIWindowLayer: 0x7fd269e18c60>>",
-//    NSLog(@"%@,====%@",[UIApplication sharedApplication].windows,[UIApplication sharedApplication].keyWindow);
+    NSLog(@"%@,====%@",[UIApplication sharedApplication].windows,[UIApplication sharedApplication].keyWindow);
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:23/255.0 green:180/255.0 blue:237/255.0 alpha:1]];
     [[UINavigationBar appearance]setBarStyle:UIBarStyleBlack];

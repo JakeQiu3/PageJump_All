@@ -26,8 +26,7 @@
 		737E09EA1C6442060064D835 /* MainPushOrPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E09E91C6442060064D835 /* MainPushOrPopViewController.m */; };
 		737E09ED1C6446F20064D835 /* NextPushOrPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E09EC1C6446F20064D835 /* NextPushOrPopViewController.m */; };
 		737E09F11C64818A0064D835 /* RootViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E09F01C64818A0064D835 /* RootViewViewController.m */; };
-		737E09F61C648F980064D835 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E09F31C648F980064D835 /* ThreeViewController.m */; };
-		737E09F71C648F980064D835 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E09F51C648F980064D835 /* TwoViewController.m */; };
+		737E09F61C648F980064D835 /* NextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 737E09F31C648F980064D835 /* NextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,10 +63,8 @@
 		737E09EC1C6446F20064D835 /* NextPushOrPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextPushOrPopViewController.m; sourceTree = "<group>"; };
 		737E09EF1C64818A0064D835 /* RootViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewViewController.h; sourceTree = "<group>"; };
 		737E09F01C64818A0064D835 /* RootViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewViewController.m; sourceTree = "<group>"; };
-		737E09F21C648F980064D835 /* ThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
-		737E09F31C648F980064D835 /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
-		737E09F41C648F980064D835 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
-		737E09F51C648F980064D835 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		737E09F21C648F980064D835 /* NextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextViewController.h; sourceTree = "<group>"; };
+		737E09F31C648F980064D835 /* NextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,10 +169,8 @@
 			children = (
 				737E09EF1C64818A0064D835 /* RootViewViewController.h */,
 				737E09F01C64818A0064D835 /* RootViewViewController.m */,
-				737E09F41C648F980064D835 /* TwoViewController.h */,
-				737E09F51C648F980064D835 /* TwoViewController.m */,
-				737E09F21C648F980064D835 /* ThreeViewController.h */,
-				737E09F31C648F980064D835 /* ThreeViewController.m */,
+				737E09F21C648F980064D835 /* NextViewController.h */,
+				737E09F31C648F980064D835 /* NextViewController.m */,
 			);
 			name = "window的rootviewController（新特性：可以将上1个根控制器销毁）";
 			sourceTree = "<group>";
@@ -254,11 +249,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				737E09E11C6436450064D835 /* ViewController.m in Sources */,
-				737E09F61C648F980064D835 /* ThreeViewController.m in Sources */,
+				737E09F61C648F980064D835 /* NextViewController.m in Sources */,
 				737E09EA1C6442060064D835 /* MainPushOrPopViewController.m in Sources */,
 				737E09ED1C6446F20064D835 /* NextPushOrPopViewController.m in Sources */,
 				7334AD311C312290009DE444 /* TabBarViewController.m in Sources */,
-				737E09F71C648F980064D835 /* TwoViewController.m in Sources */,
 				7334AD3B1C3126C7009DE444 /* SecondViewController.m in Sources */,
 				7316AF971C321A3600D4A117 /* LoginViewController.m in Sources */,
 				7334AD1A1C310C3E009DE444 /* AppDelegate.m in Sources */,

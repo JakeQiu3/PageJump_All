@@ -7,5 +7,11 @@
 
 2.navigationvc：次级容器控制器
 本身可以让多个viewcontroller进栈出栈，但其本身必须要拥有1个根控制器，作为栈底的引子。其本身常作为window的rootviewcontroller。
-<!----陷阱：tabbar容器类一般会镶嵌很多navigationvc，导航控制器再设置各自的rootviewController> ！！！！！！！！！若在navigationvc 里设置tabbar，tabbar里在设置3个子navigationvc，会出现navigationitem的设置问题。
+----陷阱：tabbar容器类一般会镶嵌很多navigationvc，导航控制器再设置各自的rootviewController> ！！！！！！！！！若在navigationvc 里设置tabbar，tabbar里在设置3个子navigationvc，会出现navigationitem的设置问题。!>
+ 
+
+3.push pop 入出创建和销毁； present dismiss 创建和销毁
+
+4.window的rootviewController（常用于新特性：可以将上一个设置的1个根控制器销毁）。一般用keywindow的rootviewController 来设置；但碰到了键盘和alert（UIAlertControllerShimPresenterWindow）弹出框keywindow不是之前设置rootviewController的UIWindow。而且多是创建后交互了就销毁的。故不选择。
+
  

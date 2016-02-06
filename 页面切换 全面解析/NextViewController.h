@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ThreeViewController : UITabBarController
+@interface NextViewController : UIViewController
 
 @end

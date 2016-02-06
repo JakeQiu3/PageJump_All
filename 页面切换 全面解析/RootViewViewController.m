@@ -7,7 +7,7 @@
 //
 
 #import "RootViewViewController.h"
-#import "TwoViewController.h"
+#import "NextViewController.h"
 @interface RootViewViewController ()
 
 @end
@@ -25,7 +25,7 @@
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
     btn.frame = CGRectMake(100, 100, 100, 50);
-    [btn setTitle:@"nextPage" forState:UIControlStateNormal];
+    [btn setTitle:@"测试" forState:UIControlStateNormal];
     
     [btn addTarget:self action:@selector(push:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
@@ -34,25 +34,24 @@
 
 - (void)push:(UIButton *)btn {
     //    设置下一个界面返回按钮
-    UIBarButtonItem *backBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.backBarButtonItem = backBtnItem;
+//    UIBarButtonItem *backBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+//    self.navigationItem.backBarButtonItem = backBtnItem;
     
-    TwoViewController *twoVC = [[TwoViewController alloc] init];
-    [self.navigationController pushViewController:twoVC animated:YES];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"选择" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex) {//点击确定：跳转到新的界面
+        NextViewController *threeBar = [[NextViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:threeBar];
+        self.view.window.rootViewController = nav;
+        NSLog(@"%@。。。。。。。%@========   =%@",self.view.window.rootViewController,[UIApplication sharedApplication].windows,[UIApplication sharedApplication].keyWindow);
+        
+        //        UIWindow *keywindow = [[UIApplication sharedApplication].windows lastObject];
+        //        keywindow.rootViewController = threeBar;
+        //        [UIApplication sharedApplication].keyWindow.rootViewController = threeBar;
+        //    打印keywindow： <_UIAlertControllerShimPresenterWindow: 0x7fe22493bf60; frame = (0 0; 414 736); opaque = NO; autoresize = W+H; gestureRecognizers = <NSArray: 0x7fe224933550>; layer = <UIWindowLayer: 0x7fe224936910>>
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
